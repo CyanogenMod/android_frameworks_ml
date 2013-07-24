@@ -20,4 +20,19 @@ import android.bordeaux.services.StringString;
 
 interface IAggregatorManager {
     List<StringString> getData(in String dataName);
+
+    // TODO: remove the following interfaces in production
+    // they are only used for demo purpose
+    List<String> getLocationClusters();
+    List<String> getTimeOfDayValues();
+    List<String> getDayOfWeekValues();
+    // use "" to disable the fake location
+    boolean setFakeLocation(in String cluster);
+    // use "" to disable the fake time
+    boolean setFakeTimeOfDay(in String time_of_day);
+    // use "" to disable the fake day
+    boolean setFakeDayOfWeek(in String day_of_week);
+    // return whether the service is in fake mode
+    // it's in fake mode, if any of the location, time and day is fake
+    boolean getFakeMode();
 }
